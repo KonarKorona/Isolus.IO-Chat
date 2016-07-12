@@ -3,18 +3,14 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var get_ip = require('ipware')().get_ip;
 
-var ipfo = function(req){
-    var ipin = get_ip(req);
-    return ipin;
-}
+// Broken
 
 app.get('/', function(req,res){
-    var ip_info = get_ip(req);
-    console.log(ip_info);
     res.sendfile('chat.html');
 });
 
 io.on('connection', function(socket){
+    console.log("Connection Made");
     var user = ipfo;
     io.emit('chat message', "***** A wild stranger appears! *****");
     socket.on('chat message', function(msg){
