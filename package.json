@@ -1,0 +1,26 @@
+{
+  "name": "deviochat",
+  "version": "1.0.0",
+  "description": "A chat made in Node.JS",
+  "main": "chat.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "ipware": "^0.0.8",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon chat.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KonarKorona/Isolus.IO-Chat.git"
+  },
+  "author": "Isolus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KonarKorona/Isolus.IO-Chat/issues"
+  },
+  "homepage": "https://github.com/KonarKorona/Isolus.IO-Chat#readme"
+}
