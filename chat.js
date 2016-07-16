@@ -5,16 +5,19 @@ var io = require('socket.io')(http);
 app.get('/', function(req,res){
     res.sendfile('chat.html');
 });
-
+io.on('start', function(socket){
+    io.emit('chat message', "***** Server Reset! *****");
+});
 io.on('connection', function(socket){
     console.log("A Stranger Connected!");
-    io.emit('chat message', "***** A wild stranger appears! *****");
+    io.emit('chat message', "***** A Wild Stranger Appears! *****");
     socket.on('chat message', function(msg){
         console.log('message: ' + msg);
         io.emit('chat message', msg);
     });
 });
 
-http.listen(3000, function(){
-    console.log("listening on *:3000");
+http.listen(3001, function(){
+    console.log("This is a dev server");
+    console.log("listening on *:3001");
 });
